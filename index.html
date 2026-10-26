@@ -1,90 +1,60 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Практика DOM</title>
-
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      padding-bottom: 50px;
-      transition: background-color 0.3s ease;
-    }
-    section {
-      margin-bottom: 30px;
-      padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-    
-  
-    #validation-input {
-      border: 3px solid #bdbdbd;
-      outline: none;
-      padding: 8px;
-      font-size: 16px;
-    }
-    #validation-input.valid {
-      border-color: #4caf50;
-    }
-    #validation-input.invalid {
-      border-color: #f44336;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
- 
-  <section>
-    <h3>Завдання 1: Зміна кольору фону</h3>
-    <form id="color-form">
-      <p>Choose a color:</p>
-      <label>
-        <input type="radio" name="color" value="red" checked />
-        Red
-      </label>
-      <label>
-        <input type="radio" name="color" value="white" />
-        White
-      </label>
-      <label>
-        <input type="radio" name="color" value="green" />
-        Green
-      </label>
-    </form>
-  </section>
+    <ul class="gallery">
+        <li>
+            <img class="image"
+                src="https://images.pexels.com/photos/4617294/pexels-photo-4617294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="зображення">
+        </li>
+        <li>
+            <img class="image"
+                src="https://images.pexels.com/photos/4617294/pexels-photo-4617294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="зображення">
+        </li>
+        <li>
+            <img class="image"
+                src="https://images.pexels.com/photos/11815778/pexels-photo-11815778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="зображення">
+        </li>
+        <li>
+            <img class="image"
+                src="https://images.pexels.com/photos/6195166/pexels-photo-6195166.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="зображення">
+        </li>
+        <li>
+            <img class="image"
+                src="https://images.pexels.com/photos/6957926/pexels-photo-6957926.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="зображення">
+        </li>
+        <li>
+            <img class="image"
+                src="https://images.pexels.com/photos/15520825/pexels-photo-15520825.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="зображення">
+        </li>
+    </ul>
 
- 
-  <section>
-    <h3>Завдання 2.1: Привітання</h3>
-    <input type="text" placeholder="Ваше ім'я?" id="name-input" />
-    <h1>Привіт, <span id="name-output">незнайомець</span>!</h1>
-  </section>
 
-  
-  <section>
-    <h3>Завдання 2.2: Валідація довжини інпуту</h3>
-    <input
-      type="text"
-      id="validation-input"
-      data-length="6"
-      placeholder="Введи 6 символів"
-    />
-  </section>
+    <div id="controls">
+        <input type="number" min="0" max="100" step="1" />
+        <button type="button" data-action="render">Створити</button>
+        <button type="button" data-action="destroy">Очистити</button>
+    </div>
 
- 
-  <section>
-    <h3>Завдання 3: Зміна розміру шрифту</h3>
-    <input id="font-size-control" type="range" min="10" max="100" value="16" />
-    <br /><br />
-    <span id="text">Абракадабра!</span>
-  </section>
+    <div id="boxes" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;"></div>
 
- 
-  <script src="script.js"></script>
+
+
+    <script src="script.js"></script>
 </body>
+
 </html>

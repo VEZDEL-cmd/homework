@@ -716,40 +716,40 @@
 
 
 
- 
+
 // const textInput = document.getElementById('textInput');
 // const changeTextBtn = document.getElementById('changeTextBtn');
 
- 
+
 // changeTextBtn.addEventListener('click', () => {
- 
+
 //   if (textInput.value.trim() !== '') {
 //     changeTextBtn.textContent = textInput.value;
 //   }
 // });
 
 
- 
+
 // const myImage = document.getElementById('myImage');
 
- 
+
 // myImage.src = 'https://images.unsplash.com/photo-1575936123452-b67c3203c357?w=300';
 
 
- 
+
 // const myLink = document.getElementById('myLink');
 // const secondImage = document.getElementById('secondImage');
- 
+
 // myLink.href = 'https://github.com';
 // myLink.textContent = 'Перейти на GitHub';  
- 
+
 // secondImage.setAttribute('alt', 'Красивий гірський пейзаж під час заходу сонця');
 
 
- 
+
 // const myList = document.getElementById('myList');
 // const firstListItem = myList.firstElementChild;  
- 
+
 // firstListItem.textContent = 'Змінений перший елемент списку!';
 
 
@@ -759,11 +759,11 @@
 // Тема 18. DOM Створення та видалення вузлів.
 
 
- 
+
 // const categoriesList = document.querySelectorAll('#categories > .item');
 // console.log(`У списку ${categoriesList.length} категорії.`);
 
- 
+
 // categoriesList.forEach(item => {
 //   const title = item.querySelector('h2').textContent;
 //   const elementsCount = item.querySelectorAll('ul li').length;
@@ -786,14 +786,14 @@
 
 // const ingredientsList = document.querySelector('#ingredients');
 
- 
+
 // const items = ingredients.map(ingredient => {
 //   const liItem = document.createElement('li');
 //   liItem.textContent = ingredient;
 //   return liItem;
 // });
 
- 
+
 // ingredientsList.append(...items);
 
 
@@ -821,27 +821,27 @@
 
 // const galleryList = document.querySelector('#gallery');
 
- 
+
 // const galleryMarkup = images
 //   .map(({ url, alt }) => `<li><img src="${url}" alt="${alt}"></li>`)
 //   .join('');
 
- 
+
 // galleryList.insertAdjacentHTML('beforeend', galleryMarkup);
 
 
 
 
 
- 
+
 // let counterValue = 0;
 
- 
+
 // const decrementBtn = document.querySelector('[data-action="decrement"]');
 // const incrementBtn = document.querySelector('[data-action="increment"]');
 // const valueSpan = document.querySelector('#value');
 
- 
+
 // const increment = () => {
 //   counterValue += 1;
 //   updateUI();
@@ -852,11 +852,11 @@
 //   updateUI();
 // };
 
- 
+
 // const updateUI = () => {
 //   valueSpan.textContent = counterValue;
 // };
- 
+
 // decrementBtn.addEventListener('click', decrement);
 // incrementBtn.addEventListener('click', increment);
 
@@ -865,48 +865,121 @@
 
 // Тема 19. Події
 
- 
-const colorForm = document.querySelector('#color-form');
 
-colorForm.addEventListener('change', event => {
-  const selectedColor = event.target.value;
-  document.body.style.backgroundColor = selectedColor;
+// const colorForm = document.querySelector('#color-form');
+
+// colorForm.addEventListener('change', event => {
+//   const selectedColor = event.target.value;
+//   document.body.style.backgroundColor = selectedColor;
+// });
+
+
+
+// const nameInput = document.querySelector('#name-input');
+// const nameOutput = document.querySelector('#name-output');
+
+// nameInput.addEventListener('input', event => {
+//   const trimmedValue = event.target.value.trim();
+//   nameOutput.textContent = trimmedValue === '' ? 'незнайомець' : trimmedValue;
+// });
+
+
+// const validationInput = document.querySelector('#validation-input');
+// const requiredLength = Number(validationInput.dataset.length);
+
+// validationInput.addEventListener('blur', () => {
+//   const enteredTextLength = validationInput.value.length;
+
+//   if (enteredTextLength === requiredLength) {
+//     validationInput.classList.add('valid');
+//     validationInput.classList.remove('invalid');
+//   } else {
+//     validationInput.classList.add('invalid');
+//     validationInput.classList.remove('valid');
+//   }
+// });
+
+
+// const fontSizeControl = document.querySelector('#font-size-control');
+// const textSpan = document.querySelector('#text');
+
+
+// textSpan.style.fontSize = `${fontSizeControl.value}px`;
+
+// fontSizeControl.addEventListener('input', event => {
+//   const fontSize = event.target.value;
+//   textSpan.style.fontSize = `${fontSize}px`;
+// });
+
+
+
+
+// Тема 20. Події. Події клавіатури та миші
+
+
+const gallery = document.querySelector('.gallery');
+
+ 
+const scrollStep = 320;
+
+window.addEventListener('keydown', event => {
+    if (event.code === 'ArrowRight') {
+        gallery.scrollBy({ left: scrollStep, behavior: 'smooth' });
+    } else if (event.code === 'ArrowLeft') {
+        gallery.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+    }
 });
 
+const inputRef = document.querySelector('#controls input');
+const renderBtn = document.querySelector('[data-action="render"]');
+const destroyBtn = document.querySelector('[data-action="destroy"]');
+const boxesContainer = document.querySelector('#boxes');
 
  
-const nameInput = document.querySelector('#name-input');
-const nameOutput = document.querySelector('#name-output');
-
-nameInput.addEventListener('input', event => {
-  const trimmedValue = event.target.value.trim();
-  nameOutput.textContent = trimmedValue === '' ? 'незнайомець' : trimmedValue;
+renderBtn.addEventListener('click', () => {
+    const amount = Number(inputRef.value);
+    if (amount > 0) {
+        createBoxes(amount);
+    }
 });
 
- 
-const validationInput = document.querySelector('#validation-input');
-const requiredLength = Number(validationInput.dataset.length);
-
-validationInput.addEventListener('blur', () => {
-  const enteredTextLength = validationInput.value.length;
-
-  if (enteredTextLength === requiredLength) {
-    validationInput.classList.add('valid');
-    validationInput.classList.remove('invalid');
-  } else {
-    validationInput.classList.add('invalid');
-    validationInput.classList.remove('valid');
-  }
-});
+destroyBtn.addEventListener('click', destroyBoxes);
 
  
-const fontSizeControl = document.querySelector('#font-size-control');
-const textSpan = document.querySelector('#text');
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
 
  
-textSpan.style.fontSize = `${fontSizeControl.value}px`;
+function createBoxes(amount) {
+   
+    destroyBoxes();
 
-fontSizeControl.addEventListener('input', event => {
-  const fontSize = event.target.value;
-  textSpan.style.fontSize = `${fontSize}px`;
-});
+    const elements = [];
+    let size = 30;  
+
+    for (let i = 0; i < amount; i++) {
+        const div = document.createElement('div');
+        div.style.width = `${size}px`;
+        div.style.height = `${size}px`;
+        div.style.backgroundColor = getRandomColor();
+
+        elements.push(div);
+        size += 10; 
+    }
+
+   
+    boxesContainer.append(...elements);
+}
+
+ 
+function destroyBoxes() {
+    boxesContainer.innerHTML = '';
+    inputRef.value = '';  
+}
+
+
+
