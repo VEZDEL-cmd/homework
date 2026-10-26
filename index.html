@@ -1,60 +1,81 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Практика роботи з DOM</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    section {
-      margin-bottom: 30px;
-      padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    img {
-      display: block;
-      margin-top: 10px;
-      max-width: 200px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+
 <body>
 
- 
-  <section>
-    <h3>Завдання 1</h3>
-    <input type="text" id="textInput" placeholder="Введіть текст">
-    <button id="changeTextBtn">Змінити текст</button>
-  </section>
-
- 
-  <section>
-    <h3>Завдання 2</h3>
-    <h4 id="title">Зображення нижче:</h4>
-    <img id="myImage" src="https://via.placeholder.com/150" alt="Старе зображення">
-  </section>
- 
-  <section>
-    <h3>Завдання 3</h3>
-    <a id="myLink" href="https://google.com" target="_blank">Перейти у Google</a>
-    <img id="secondImage" src="https://via.placeholder.com/150">
-  </section>
-
- 
-  <section>
-    <h3>Завдання 4</h3>
-    <ul id="myList">
-      <li class="list-item">Перший елемент</li>
-      <li class="list-item">Другий елемент</li>
-      <li class="list-item">Третій елемент</li>
+    <ul id="categories">
+        <li class="item">
+            <h2>Тварини</h2>
+            <ul>
+                <li>Кіт</li>
+                <li>Хом'як</li>
+                <li>Кінь</li>
+                <li>Папуга</li>
+            </ul>
+        </li>
+        <li class="item">
+            <h2>Продукти</h2>
+            <ul>
+                <li>Хліб</li>
+                <li>Петрушка</li>
+                <li>Сир</li>
+            </ul>
+        </li>
+        <li class="item">
+            <h2>Технології</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node</li>
+            </ul>
+        </li>
     </ul>
-  </section>
 
- 
-  <script src="script.js"></script>
+
+    <div id="counter">
+        <button type="button" data-action="decrement">-1</button>
+        <span id="value">0</span>
+        <button type="button" data-action="increment">+1</button>
+    </div>
+
+    <ul id="ingredients"></ul>
+
+
+    <ul id="gallery" class="gallery"></ul>
+
+    <style>
+        .gallery {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        .gallery li {
+            flex-basis: calc((100% - 40px) / 3);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -717,37 +717,145 @@
 
 
  
-const textInput = document.getElementById('textInput');
-const changeTextBtn = document.getElementById('changeTextBtn');
+// const textInput = document.getElementById('textInput');
+// const changeTextBtn = document.getElementById('changeTextBtn');
 
  
-changeTextBtn.addEventListener('click', () => {
+// changeTextBtn.addEventListener('click', () => {
  
-  if (textInput.value.trim() !== '') {
-    changeTextBtn.textContent = textInput.value;
-  }
+//   if (textInput.value.trim() !== '') {
+//     changeTextBtn.textContent = textInput.value;
+//   }
+// });
+
+
+ 
+// const myImage = document.getElementById('myImage');
+
+ 
+// myImage.src = 'https://images.unsplash.com/photo-1575936123452-b67c3203c357?w=300';
+
+
+ 
+// const myLink = document.getElementById('myLink');
+// const secondImage = document.getElementById('secondImage');
+ 
+// myLink.href = 'https://github.com';
+// myLink.textContent = 'Перейти на GitHub';  
+ 
+// secondImage.setAttribute('alt', 'Красивий гірський пейзаж під час заходу сонця');
+
+
+ 
+// const myList = document.getElementById('myList');
+// const firstListItem = myList.firstElementChild;  
+ 
+// firstListItem.textContent = 'Змінений перший елемент списку!';
+
+
+
+
+
+// Тема 18. DOM Створення та видалення вузлів.
+
+
+ 
+const categoriesList = document.querySelectorAll('#categories > .item');
+console.log(`У списку ${categoriesList.length} категорії.`);
+
+ 
+categoriesList.forEach(item => {
+  const title = item.querySelector('h2').textContent;
+  const elementsCount = item.querySelectorAll('ul li').length;
+
+  console.log(`Категорія: ${title}`);
+  console.log(`Кількість елементів: ${elementsCount}`);
+
 });
 
 
- 
-const myImage = document.getElementById('myImage');
+
+const ingredients = [
+  'Картопля',
+  'Гриби',
+  'Часник',
+  'Помідори',
+  'Зелень',
+  'Приправи',
+];
+
+const ingredientsList = document.querySelector('#ingredients');
 
  
-myImage.src = 'https://images.unsplash.com/photo-1575936123452-b67c3203c357?w=300';
-
-
- 
-const myLink = document.getElementById('myLink');
-const secondImage = document.getElementById('secondImage');
- 
-myLink.href = 'https://github.com';
-myLink.textContent = 'Перейти на GitHub';  
- 
-secondImage.setAttribute('alt', 'Красивий гірський пейзаж під час заходу сонця');
-
+const items = ingredients.map(ingredient => {
+  const liItem = document.createElement('li');
+  liItem.textContent = ingredient;
+  return liItem;
+});
 
  
-const myList = document.getElementById('myList');
-const firstListItem = myList.firstElementChild;  
+ingredientsList.append(...items);
+
+
+
+
+
+
+const images = [
+  {
+    url:
+      'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'White and Black Long Fur Cat',
+  },
+  {
+    url:
+      'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+  },
+  {
+    url:
+      'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'Group of Horses Running',
+  },
+];
+
+const galleryList = document.querySelector('#gallery');
+
  
-firstListItem.textContent = 'Змінений перший елемент списку!';
+const galleryMarkup = images
+  .map(({ url, alt }) => `<li><img src="${url}" alt="${alt}"></li>`)
+  .join('');
+
+ 
+galleryList.insertAdjacentHTML('beforeend', galleryMarkup);
+
+
+
+
+
+ 
+let counterValue = 0;
+
+ 
+const decrementBtn = document.querySelector('[data-action="decrement"]');
+const incrementBtn = document.querySelector('[data-action="increment"]');
+const valueSpan = document.querySelector('#value');
+
+ 
+const increment = () => {
+  counterValue += 1;
+  updateUI();
+};
+
+const decrement = () => {
+  counterValue -= 1;
+  updateUI();
+};
+
+ 
+const updateUI = () => {
+  valueSpan.textContent = counterValue;
+};
+ 
+decrementBtn.addEventListener('click', decrement);
+incrementBtn.addEventListener('click', increment);
