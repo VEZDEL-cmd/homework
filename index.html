@@ -1,12 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практика роботи з DOM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    section {
+      margin-bottom: 30px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    img {
+      display: block;
+      margin-top: 10px;
+      max-width: 200px;
+    }
+  </style>
 </head>
 <body>
-    <h1>hello</h1>
-    <script src="script.js"></script>
+
+ 
+  <section>
+    <h3>Завдання 1</h3>
+    <input type="text" id="textInput" placeholder="Введіть текст">
+    <button id="changeTextBtn">Змінити текст</button>
+  </section>
+
+ 
+  <section>
+    <h3>Завдання 2</h3>
+    <h4 id="title">Зображення нижче:</h4>
+    <img id="myImage" src="https://via.placeholder.com/150" alt="Старе зображення">
+  </section>
+ 
+  <section>
+    <h3>Завдання 3</h3>
+    <a id="myLink" href="https://google.com" target="_blank">Перейти у Google</a>
+    <img id="secondImage" src="https://via.placeholder.com/150">
+  </section>
+
+ 
+  <section>
+    <h3>Завдання 4</h3>
+    <ul id="myList">
+      <li class="list-item">Перший елемент</li>
+      <li class="list-item">Другий елемент</li>
+      <li class="list-item">Третій елемент</li>
+    </ul>
+  </section>
+
+ 
+  <script src="script.js"></script>
 </body>
 </html>

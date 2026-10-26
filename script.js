@@ -684,27 +684,70 @@
 
 
 
-function Account({ login, email }) {
-    this.login = login;
-    this.email = email;
-}
+// function Account({ login, email }) {
+//     this.login = login;
+//     this.email = email;
+// }
 
 
-Account.prototype.getInfo = function () {
-    console.log(`Login: ${this.login}, Email: ${this.email}`);
-};
+// Account.prototype.getInfo = function () {
+//     console.log(`Login: ${this.login}, Email: ${this.email}`);
+// };
 
 
-console.log(Account.prototype.getInfo);
+// console.log(Account.prototype.getInfo);
 
-const mango = new Account({
-    login: 'Mangozedog',
-    email: 'mango@dog.woof',
+// const mango = new Account({
+//     login: 'Mangozedog',
+//     email: 'mango@dog.woof',
+// });
+// mango.getInfo();
+
+// const poly = new Account({
+//     login: 'Poly',
+//     email: 'poly@mail.com',
+// });
+// poly.getInfo();  
+
+
+
+// Тема 17. DOM (основи)
+
+
+
+
+ 
+const textInput = document.getElementById('textInput');
+const changeTextBtn = document.getElementById('changeTextBtn');
+
+ 
+changeTextBtn.addEventListener('click', () => {
+ 
+  if (textInput.value.trim() !== '') {
+    changeTextBtn.textContent = textInput.value;
+  }
 });
-mango.getInfo();
 
-const poly = new Account({
-    login: 'Poly',
-    email: 'poly@mail.com',
-});
-poly.getInfo();  
+
+ 
+const myImage = document.getElementById('myImage');
+
+ 
+myImage.src = 'https://images.unsplash.com/photo-1575936123452-b67c3203c357?w=300';
+
+
+ 
+const myLink = document.getElementById('myLink');
+const secondImage = document.getElementById('secondImage');
+ 
+myLink.href = 'https://github.com';
+myLink.textContent = 'Перейти на GitHub';  
+ 
+secondImage.setAttribute('alt', 'Красивий гірський пейзаж під час заходу сонця');
+
+
+ 
+const myList = document.getElementById('myList');
+const firstListItem = myList.firstElementChild;  
+ 
+firstListItem.textContent = 'Змінений перший елемент списку!';
