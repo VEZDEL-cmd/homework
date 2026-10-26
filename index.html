@@ -1,81 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практика DOM</title>
 
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding-bottom: 50px;
+      transition: background-color 0.3s ease;
+    }
+    section {
+      margin-bottom: 30px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    
+  
+    #validation-input {
+      border: 3px solid #bdbdbd;
+      outline: none;
+      padding: 8px;
+      font-size: 16px;
+    }
+    #validation-input.valid {
+      border-color: #4caf50;
+    }
+    #validation-input.invalid {
+      border-color: #f44336;
+    }
+  </style>
+</head>
 <body>
 
-    <ul id="categories">
-        <li class="item">
-            <h2>Тварини</h2>
-            <ul>
-                <li>Кіт</li>
-                <li>Хом'як</li>
-                <li>Кінь</li>
-                <li>Папуга</li>
-            </ul>
-        </li>
-        <li class="item">
-            <h2>Продукти</h2>
-            <ul>
-                <li>Хліб</li>
-                <li>Петрушка</li>
-                <li>Сир</li>
-            </ul>
-        </li>
-        <li class="item">
-            <h2>Технології</h2>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Node</li>
-            </ul>
-        </li>
-    </ul>
+ 
+  <section>
+    <h3>Завдання 1: Зміна кольору фону</h3>
+    <form id="color-form">
+      <p>Choose a color:</p>
+      <label>
+        <input type="radio" name="color" value="red" checked />
+        Red
+      </label>
+      <label>
+        <input type="radio" name="color" value="white" />
+        White
+      </label>
+      <label>
+        <input type="radio" name="color" value="green" />
+        Green
+      </label>
+    </form>
+  </section>
 
+ 
+  <section>
+    <h3>Завдання 2.1: Привітання</h3>
+    <input type="text" placeholder="Ваше ім'я?" id="name-input" />
+    <h1>Привіт, <span id="name-output">незнайомець</span>!</h1>
+  </section>
 
-    <div id="counter">
-        <button type="button" data-action="decrement">-1</button>
-        <span id="value">0</span>
-        <button type="button" data-action="increment">+1</button>
-    </div>
+  
+  <section>
+    <h3>Завдання 2.2: Валідація довжини інпуту</h3>
+    <input
+      type="text"
+      id="validation-input"
+      data-length="6"
+      placeholder="Введи 6 символів"
+    />
+  </section>
 
-    <ul id="ingredients"></ul>
+ 
+  <section>
+    <h3>Завдання 3: Зміна розміру шрифту</h3>
+    <input id="font-size-control" type="range" min="10" max="100" value="16" />
+    <br /><br />
+    <span id="text">Абракадабра!</span>
+  </section>
 
-
-    <ul id="gallery" class="gallery"></ul>
-
-    <style>
-        .gallery {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            flex-wrap: wrap;
-        }
-
-        .gallery li {
-            flex-basis: calc((100% - 40px) / 3);
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-
-
-    <script src="script.js"></script>
+ 
+  <script src="script.js"></script>
 </body>
-
 </html>

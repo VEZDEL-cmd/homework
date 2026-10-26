@@ -760,102 +760,153 @@
 
 
  
-const categoriesList = document.querySelectorAll('#categories > .item');
-console.log(`У списку ${categoriesList.length} категорії.`);
+// const categoriesList = document.querySelectorAll('#categories > .item');
+// console.log(`У списку ${categoriesList.length} категорії.`);
 
  
-categoriesList.forEach(item => {
-  const title = item.querySelector('h2').textContent;
-  const elementsCount = item.querySelectorAll('ul li').length;
+// categoriesList.forEach(item => {
+//   const title = item.querySelector('h2').textContent;
+//   const elementsCount = item.querySelectorAll('ul li').length;
 
-  console.log(`Категорія: ${title}`);
-  console.log(`Кількість елементів: ${elementsCount}`);
+//   console.log(`Категорія: ${title}`);
+//   console.log(`Кількість елементів: ${elementsCount}`);
 
+// });
+
+
+
+// const ingredients = [
+//   'Картопля',
+//   'Гриби',
+//   'Часник',
+//   'Помідори',
+//   'Зелень',
+//   'Приправи',
+// ];
+
+// const ingredientsList = document.querySelector('#ingredients');
+
+ 
+// const items = ingredients.map(ingredient => {
+//   const liItem = document.createElement('li');
+//   liItem.textContent = ingredient;
+//   return liItem;
+// });
+
+ 
+// ingredientsList.append(...items);
+
+
+
+
+
+
+// const images = [
+//   {
+//     url:
+//       'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+//     alt: 'White and Black Long Fur Cat',
+//   },
+//   {
+//     url:
+//       'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+//     alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+//   },
+//   {
+//     url:
+//       'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+//     alt: 'Group of Horses Running',
+//   },
+// ];
+
+// const galleryList = document.querySelector('#gallery');
+
+ 
+// const galleryMarkup = images
+//   .map(({ url, alt }) => `<li><img src="${url}" alt="${alt}"></li>`)
+//   .join('');
+
+ 
+// galleryList.insertAdjacentHTML('beforeend', galleryMarkup);
+
+
+
+
+
+ 
+// let counterValue = 0;
+
+ 
+// const decrementBtn = document.querySelector('[data-action="decrement"]');
+// const incrementBtn = document.querySelector('[data-action="increment"]');
+// const valueSpan = document.querySelector('#value');
+
+ 
+// const increment = () => {
+//   counterValue += 1;
+//   updateUI();
+// };
+
+// const decrement = () => {
+//   counterValue -= 1;
+//   updateUI();
+// };
+
+ 
+// const updateUI = () => {
+//   valueSpan.textContent = counterValue;
+// };
+ 
+// decrementBtn.addEventListener('click', decrement);
+// incrementBtn.addEventListener('click', increment);
+
+
+
+
+// Тема 19. Події
+
+ 
+const colorForm = document.querySelector('#color-form');
+
+colorForm.addEventListener('change', event => {
+  const selectedColor = event.target.value;
+  document.body.style.backgroundColor = selectedColor;
 });
 
 
-
-const ingredients = [
-  'Картопля',
-  'Гриби',
-  'Часник',
-  'Помідори',
-  'Зелень',
-  'Приправи',
-];
-
-const ingredientsList = document.querySelector('#ingredients');
-
  
-const items = ingredients.map(ingredient => {
-  const liItem = document.createElement('li');
-  liItem.textContent = ingredient;
-  return liItem;
+const nameInput = document.querySelector('#name-input');
+const nameOutput = document.querySelector('#name-output');
+
+nameInput.addEventListener('input', event => {
+  const trimmedValue = event.target.value.trim();
+  nameOutput.textContent = trimmedValue === '' ? 'незнайомець' : trimmedValue;
 });
 
  
-ingredientsList.append(...items);
+const validationInput = document.querySelector('#validation-input');
+const requiredLength = Number(validationInput.dataset.length);
 
+validationInput.addEventListener('blur', () => {
+  const enteredTextLength = validationInput.value.length;
 
-
-
-
-
-const images = [
-  {
-    url:
-      'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'White and Black Long Fur Cat',
-  },
-  {
-    url:
-      'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
-  },
-  {
-    url:
-      'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'Group of Horses Running',
-  },
-];
-
-const galleryList = document.querySelector('#gallery');
+  if (enteredTextLength === requiredLength) {
+    validationInput.classList.add('valid');
+    validationInput.classList.remove('invalid');
+  } else {
+    validationInput.classList.add('invalid');
+    validationInput.classList.remove('valid');
+  }
+});
 
  
-const galleryMarkup = images
-  .map(({ url, alt }) => `<li><img src="${url}" alt="${alt}"></li>`)
-  .join('');
+const fontSizeControl = document.querySelector('#font-size-control');
+const textSpan = document.querySelector('#text');
 
  
-galleryList.insertAdjacentHTML('beforeend', galleryMarkup);
+textSpan.style.fontSize = `${fontSizeControl.value}px`;
 
-
-
-
-
- 
-let counterValue = 0;
-
- 
-const decrementBtn = document.querySelector('[data-action="decrement"]');
-const incrementBtn = document.querySelector('[data-action="increment"]');
-const valueSpan = document.querySelector('#value');
-
- 
-const increment = () => {
-  counterValue += 1;
-  updateUI();
-};
-
-const decrement = () => {
-  counterValue -= 1;
-  updateUI();
-};
-
- 
-const updateUI = () => {
-  valueSpan.textContent = counterValue;
-};
- 
-decrementBtn.addEventListener('click', decrement);
-incrementBtn.addEventListener('click', increment);
+fontSizeControl.addEventListener('input', event => {
+  const fontSize = event.target.value;
+  textSpan.style.fontSize = `${fontSize}px`;
+});
