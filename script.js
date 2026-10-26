@@ -15,7 +15,7 @@
 //   console.log(`${key}: ${user[key]}`);
 // }
 
- 
+
 // function countProps(obj) {
 //   return Object.keys(obj).length;
 // }
@@ -24,7 +24,7 @@
 // console.log('Кількість властивостей:', countProps({ name: 'Mango', age: 2 })); // 2
 // console.log('Кількість властивостей:', countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 })); // 3
 
- 
+
 // function findBestEmployee(employees) {
 //   let bestEmployee = '';
 //   let maxTasks = 0;
@@ -39,7 +39,7 @@
 //   return bestEmployee;
 // }
 
- 
+
 // console.log(
 //   'Найкращий робітник:',
 //   findBestEmployee({
@@ -58,7 +58,7 @@
 //   })
 // ); 
 
- 
+
 // function countTotalSalary(employees) {
 //   let totalSalary = 0;
 
@@ -69,7 +69,7 @@
 //   return totalSalary;
 // }
 
- 
+
 // console.log(
 //   'Загальна зарплата:',
 //   countTotalSalary({
@@ -88,7 +88,7 @@
 //   })
 // );  
 
- 
+
 // function getAllPropValues(arr, prop) {
 //   const values = [];
 
@@ -112,7 +112,7 @@
 // console.log('Значення quantity:', getAllPropValues(products, 'quantity')); // [4, 3, 7, 9]
 // console.log('Значення category:', getAllPropValues(products, 'category')); // []
 
- 
+
 // function calculateTotalPrice(allProducts, productName) {
 //   for (const product of allProducts) {
 //     if (product.name === productName) {
@@ -123,11 +123,11 @@
 //   return 0;
 // }
 
- 
+
 // console.log('Загальна вартість Radar:', calculateTotalPrice(products, 'Radar')); // 5200
 // console.log('Загальна вартість Droid:', calculateTotalPrice(products, 'Droid')); // 2800
 
- 
+
 // const Transaction = {
 //   DEPOSIT: 'deposit',
 //   WITHDRAW: 'withdraw',
@@ -137,7 +137,7 @@
 //   balance: 0,
 //   transactions: [],
 
- 
+
 //   createTransaction(amount, type) {
 //     return {
 //       id: this.transactions.length + 1,
@@ -146,14 +146,14 @@
 //     };
 //   },
 
-  
+
 //   deposit(amount) {
 //     this.balance += amount;
 //     const transaction = this.createTransaction(amount, Transaction.DEPOSIT);
 //     this.transactions.push(transaction);
 //   },
 
- 
+
 //   withdraw(amount) {
 //     if (amount > this.balance) {
 //       console.log('Зняття такої суми неможливе, недостатньо коштів!');
@@ -164,12 +164,12 @@
 //     const transaction = this.createTransaction(amount, Transaction.WITHDRAW);
 //     this.transactions.push(transaction);
 //   },
- 
+
 //   getBalance() {
 //     return this.balance;
 //   },
 
- 
+
 //   getTransactionDetails(id) {
 //     for (const transaction of this.transactions) {
 //       if (transaction.id === id) {
@@ -179,7 +179,7 @@
 //     return null;
 //   },
 
-  
+
 //   getTransactionTotal(type) {
 //     let total = 0;
 //     for (const transaction of this.transactions) {
@@ -190,7 +190,7 @@
 //     return total;
 //   },
 // };
- 
+
 // account.deposit(1000);
 // account.deposit(500);
 // account.withdraw(300);
@@ -207,7 +207,7 @@
 
 // Тема 13. Об’єкти. Деструкткризація об'єктів
 
- 
+
 // const user = {
 //   name: 'Mango',
 //   age: 20,
@@ -224,16 +224,16 @@
 //   console.log(`${key}: ${user[key]}`);
 // }
 
- 
+
 // function countProps(obj) {
 //   return Object.keys(obj).length;
 // }
 
- 
+
 // console.log('Кількість властивостей:', countProps({ name: 'Mango', age: 2 }));
 // console.log('Кількість властивостей:', countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 }));
 
- 
+
 // function findBestEmployee(employees) {
 //   let bestEmployee = '';
 //   let maxTasks = 0;
@@ -248,7 +248,7 @@
 //   return bestEmployee;
 // }
 
- 
+
 // console.log(
 //   'Найкращий робітник:',
 //   findBestEmployee({
@@ -259,7 +259,7 @@
 //   })
 // );
 
- 
+
 // function countTotalSalary(employees) {
 //   let totalSalary = 0;
 
@@ -270,7 +270,7 @@
 //   return totalSalary;
 // }
 
- 
+
 // console.log(
 //   'Загальна зарплата:',
 //   countTotalSalary({
@@ -280,13 +280,13 @@
 //   })
 // );
 
- 
+
 // function getAllPropValues(arr, prop) {
 //   const values = [];
 
 //   for (const item of arr) {
 //     if (prop in item) {
- 
+
 //       const { [prop]: value } = item;
 //       values.push(value);
 //     }
@@ -295,7 +295,7 @@
 //   return values;
 // }
 
- 
+
 // const products = [
 //   { name: 'Radar', price: 1300, quantity: 4 },
 //   { name: 'Scanner', price: 2700, quantity: 3 },
@@ -306,10 +306,10 @@
 // console.log('Значення name:', getAllPropValues(products, 'name'));
 // console.log('Значення quantity:', getAllPropValues(products, 'quantity'));
 
- 
+
 // function calculateTotalPrice(allProducts, productName) {
 //   for (const product of allProducts) {
- 
+
 //     const { name, price, quantity } = product;
 
 //     if (name === productName) {
@@ -320,10 +320,10 @@
 //   return 0;
 // }
 
- 
+
 // console.log('Загальна вартість Radar:', calculateTotalPrice(products, 'Radar'));
 // console.log('Загальна вартість Droid:', calculateTotalPrice(products, 'Droid'));
- 
+
 // const Transaction = {
 //   DEPOSIT: 'deposit',
 //   WITHDRAW: 'withdraw',
@@ -348,7 +348,7 @@
 //   },
 
 //   withdraw(amount) {
-   
+
 //     const { balance } = this;
 
 //     if (amount > balance) {
@@ -367,7 +367,7 @@
 
 //   getTransactionDetails(id) {
 //     for (const transaction of this.transactions) {
-     
+
 //       const { id: txId } = transaction;
 
 //       if (txId === id) {
@@ -380,7 +380,7 @@
 //   getTransactionTotal(type) {
 //     let total = 0;
 //     for (const transaction of this.transactions) {
-    
+
 //       const { type: txType, amount } = transaction;
 
 //       if (txType === type) {
@@ -391,7 +391,7 @@
 //   },
 // };
 
- 
+
 // account.deposit(1000);
 // account.deposit(500);
 // account.withdraw(300);
@@ -494,26 +494,26 @@
 //   },
 // ];
 
- 
+
 // const getUserNames = users => {
 //   return users.map(({ name }) => name);
 // };
 
 // console.log(getUserNames(users));
- 
 
 
- 
+
+
 // const getUsersWithEyeColor = (users, color) => {
 //   return users.filter(({ eyeColor }) => eyeColor === color);
 // };
 
 // console.log(getUsersWithEyeColor(users, 'blue')); 
- 
 
 
- 
- 
+
+
+
 // const getUsersWithGender = (users, gender) => {
 //   return users
 //     .filter(user => user.gender === gender)
@@ -521,156 +521,190 @@
 // };
 
 // console.log(getUsersWithGender(users, 'male')); 
- 
 
 
- 
+
+
 // const getInactiveUsers = users => {
 //   return users.filter(({ isActive }) => !isActive);
 // };
 
 // console.log(getInactiveUsers(users)); 
- 
 
 
- 
+
+
 // const getUserWithEmail = (users, email) => {
 //   return users.find(user => user.email === email);
 // };
 
 // console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); 
- 
+
 
 // console.log(getUserWithEmail(users, 'elmahead@omatom.com')); 
- 
+
 
 
 // Тема 15. Перебираючі методи масиву
 
- const users = [
-  {
-    id: '701b29c3-b35d-4cf1-a5f6-8b12b29a5081',
-    name: 'Moore Hensley',
-    email: 'moorehensley@indexia.com',
-    eyeColor: 'blue',
-    friends: ['Sharron Pace'],
-    isActive: false,
-    balance: 2811,
-    skills: ['ipsum', 'lorem'],
-    gender: 'male',
-    age: 37,
-  },
-  {
-    id: '7a3cbd18-57a1-4534-8e12-1caad921bda1',
-    name: 'Sharlene Bush',
-    email: 'sharlenebush@tubesys.com',
-    eyeColor: 'blue',
-    friends: ['Briana Decker', 'Sharron Pace'],
-    isActive: true,
-    balance: 3821,
-    skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
-    gender: 'female',
-    age: 34,
-  },
-  {
-    id: '88beb2f3-e4c2-49f3-a0a0-ecf957a95af3',
-    name: 'Ross Vazquez',
-    email: 'rossvazquez@xinware.com',
-    eyeColor: 'green',
-    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
-    isActive: false,
-    balance: 3793,
-    skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
-    gender: 'male',
-    age: 24,
-  },
-  {
-    id: '249b6175-5c30-44c6-b154-f120923736f5',
-    name: 'Elma Head',
-    email: 'elmahead@omatom.com',
-    eyeColor: 'green',
-    friends: ['Goldie Gentry', 'Aisha Tran'],
-    isActive: true,
-    balance: 2278,
-    skills: ['adipisicing', 'irure', 'velit'],
-    gender: 'female',
-    age: 21,
-  },
-  {
-    id: '334f8cb3-eb04-45e6-abf4-4935dd439b70',
-    name: 'Carey Barr',
-    email: 'careybarr@nurali.com',
-    eyeColor: 'blue',
-    friends: ['Jordan Sampson', 'Eddie Strong'],
-    isActive: true,
-    balance: 3951,
-    skills: ['ex', 'culpa', 'nostrud'],
-    gender: 'male',
-    age: 27,
-  },
-  {
-    id: '150b00fb-dd82-427d-9faf-2879ea87c695',
-    name: 'Blackburn Dotson',
-    email: 'blackburndotson@furnigeer.com',
-    eyeColor: 'brown',
-    friends: ['Jacklyn Lucas', 'Linda Chapman'],
-    isActive: false,
-    balance: 1498,
-    skills: ['non', 'amet', 'ipsum'],
-    gender: 'male',
-    age: 38,
-  },
-  {
-    id: 'e1bf46ab-7168-491e-925e-f01e21394812',
-    name: 'Sheree Anthony',
-    email: 'shereeanthony@kog.com',
-    eyeColor: 'brown',
-    friends: ['Goldie Gentry', 'Briana Decker'],
-    isActive: true,
-    balance: 2764,
-    skills: ['lorem', 'veniam', 'culpa'],
-    gender: 'female',
-    age: 39,
-  },
-];
+//  const users = [
+//   {
+//     id: '701b29c3-b35d-4cf1-a5f6-8b12b29a5081',
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ['ipsum', 'lorem'],
+//     gender: 'male',
+//     age: 37,
+//   },
+//   {
+//     id: '7a3cbd18-57a1-4534-8e12-1caad921bda1',
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+//     gender: 'female',
+//     age: 34,
+//   },
+//   {
+//     id: '88beb2f3-e4c2-49f3-a0a0-ecf957a95af3',
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+//     gender: 'male',
+//     age: 24,
+//   },
+//   {
+//     id: '249b6175-5c30-44c6-b154-f120923736f5',
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ['adipisicing', 'irure', 'velit'],
+//     gender: 'female',
+//     age: 21,
+//   },
+//   {
+//     id: '334f8cb3-eb04-45e6-abf4-4935dd439b70',
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ['ex', 'culpa', 'nostrud'],
+//     gender: 'male',
+//     age: 27,
+//   },
+//   {
+//     id: '150b00fb-dd82-427d-9faf-2879ea87c695',
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ['non', 'amet', 'ipsum'],
+//     gender: 'male',
+//     age: 38,
+//   },
+//   {
+//     id: 'e1bf46ab-7168-491e-925e-f01e21394812',
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ['lorem', 'veniam', 'culpa'],
+//     gender: 'female',
+//     age: 39,
+//   },
+// ];
 
 
-const calculateTotalBalance = users => {
-  return users.reduce((total, { balance }) => total + balance, 0);
+// const calculateTotalBalance = users => {
+//   return users.reduce((total, { balance }) => total + balance, 0);
+// };
+
+// console.log(calculateTotalBalance(users)); 
+
+
+
+// const getUsersWithFriend = (users, friendName) => {
+//   return users
+//     .filter(({ friends }) => friends.includes(friendName))
+//     .map(({ name }) => name);
+// };
+
+// console.log(getUsersWithFriend(users, 'Briana Decker'));  
+// console.log(getUsersWithFriend(users, 'Goldie Gentry'));  
+
+
+
+// const getNamesSortedByFriendsCount = users => {
+//   return [...users]
+//     .sort((prevUser, nextUser) => prevUser.friends.length - nextUser.friends.length)
+//     .map(({ name }) => name);
+// };
+
+// console.log(getNamesSortedByFriendsCount(users));
+
+
+
+
+// const getSortedUniqueSkills = users => {
+//   return users
+//     .flatMap(({ skills }) => skills)
+//     .filter((skill, index, array) => array.indexOf(skill) === index)
+//     .sort((a, b) => a.localeCompare(b));
+// };
+
+// console.log(getSortedUniqueSkills(users));
+
+
+
+
+
+// Тема 16. ООП
+
+
+
+
+
+function Account({ login, email }) {
+    this.login = login;
+    this.email = email;
+}
+
+
+Account.prototype.getInfo = function () {
+    console.log(`Login: ${this.login}, Email: ${this.email}`);
 };
 
-console.log(calculateTotalBalance(users)); 
 
+console.log(Account.prototype.getInfo);
 
- 
-const getUsersWithFriend = (users, friendName) => {
-  return users
-    .filter(({ friends }) => friends.includes(friendName))
-    .map(({ name }) => name);
-};
+const mango = new Account({
+    login: 'Mangozedog',
+    email: 'mango@dog.woof',
+});
+mango.getInfo();
 
-console.log(getUsersWithFriend(users, 'Briana Decker'));  
-console.log(getUsersWithFriend(users, 'Goldie Gentry'));  
-
-
- 
-const getNamesSortedByFriendsCount = users => {
-  return [...users]
-    .sort((prevUser, nextUser) => prevUser.friends.length - nextUser.friends.length)
-    .map(({ name }) => name);
-};
-
-console.log(getNamesSortedByFriendsCount(users));
- 
-
-
- 
-const getSortedUniqueSkills = users => {
-  return users
-    .flatMap(({ skills }) => skills)
-    .filter((skill, index, array) => array.indexOf(skill) === index)
-    .sort((a, b) => a.localeCompare(b));
-};
-
-console.log(getSortedUniqueSkills(users));
- 
+const poly = new Account({
+    login: 'Poly',
+    email: 'poly@mail.com',
+});
+poly.getInfo();  
