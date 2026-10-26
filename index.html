@@ -1,60 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+   <meta charset="UTF-8">
+   <title>Практика Debounce</title>
+   <link rel="stylesheet" href="style.css">
+   <!-- Підключення бібліотеки Lodash -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 </head>
 
 <body>
 
-    <ul class="gallery">
-        <li>
-            <img class="image"
-                src="https://images.pexels.com/photos/4617294/pexels-photo-4617294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="зображення">
-        </li>
-        <li>
-            <img class="image"
-                src="https://images.pexels.com/photos/4617294/pexels-photo-4617294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="зображення">
-        </li>
-        <li>
-            <img class="image"
-                src="https://images.pexels.com/photos/11815778/pexels-photo-11815778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="зображення">
-        </li>
-        <li>
-            <img class="image"
-                src="https://images.pexels.com/photos/6195166/pexels-photo-6195166.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="зображення">
-        </li>
-        <li>
-            <img class="image"
-                src="https://images.pexels.com/photos/6957926/pexels-photo-6957926.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="зображення">
-        </li>
-        <li>
-            <img class="image"
-                src="https://images.pexels.com/photos/15520825/pexels-photo-15520825.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="зображення">
-        </li>
-    </ul>
+   <div class="slider">
+      <input type="range" min="100" max="500" value="300" class="slider__input" />
+      <img src="https://via.placeholder.com/300x300" class="slider__image" alt="Placeholder" />
+   </div>
 
+   <div id="box"></div>
 
-    <div id="controls">
-        <input type="number" min="0" max="100" step="1" />
-        <button type="button" data-action="render">Створити</button>
-        <button type="button" data-action="destroy">Очистити</button>
-    </div>
-
-    <div id="boxes" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;"></div>
-
-
-
-    <script src="script.js"></script>
+   <script src="script.js"></script>
 </body>
 
 </html>

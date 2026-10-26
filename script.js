@@ -917,69 +917,106 @@
 // Тема 20. Події. Події клавіатури та миші
 
 
-const gallery = document.querySelector('.gallery');
+// const gallery = document.querySelector('.gallery');
+
+
+// const scrollStep = 320;
+
+// window.addEventListener('keydown', event => {
+//     if (event.code === 'ArrowRight') {
+//         gallery.scrollBy({ left: scrollStep, behavior: 'smooth' });
+//     } else if (event.code === 'ArrowLeft') {
+//         gallery.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+//     }
+// });
+
+// const inputRef = document.querySelector('#controls input');
+// const renderBtn = document.querySelector('[data-action="render"]');
+// const destroyBtn = document.querySelector('[data-action="destroy"]');
+// const boxesContainer = document.querySelector('#boxes');
+
+
+// renderBtn.addEventListener('click', () => {
+//     const amount = Number(inputRef.value);
+//     if (amount > 0) {
+//         createBoxes(amount);
+//     }
+// });
+
+// destroyBtn.addEventListener('click', destroyBoxes);
+
+
+// function getRandomColor() {
+//     const r = Math.floor(Math.random() * 256);
+//     const g = Math.floor(Math.random() * 256);
+//     const b = Math.floor(Math.random() * 256);
+//     return `rgb(${r}, ${g}, ${b})`;
+// }
+
+
+// function createBoxes(amount) {
+
+//     destroyBoxes();
+
+//     const elements = [];
+//     let size = 30;  
+
+//     for (let i = 0; i < amount; i++) {
+//         const div = document.createElement('div');
+//         div.style.width = `${size}px`;
+//         div.style.height = `${size}px`;
+//         div.style.backgroundColor = getRandomColor();
+
+//         elements.push(div);
+//         size += 10; 
+//     }
+
+
+//     boxesContainer.append(...elements);
+// }
+
+
+// function destroyBoxes() {
+//     boxesContainer.innerHTML = '';
+//     inputRef.value = '';  
+// }
+
+
+
+// Тема 1. Оптимізація подій
+
+// git hub
+
+
+
+// Тема 2. Бібліотека Lodash. Throttle і Debounce
 
  
-const scrollStep = 320;
+const sliderInput = document.querySelector('.slider__input');
+const sliderImage = document.querySelector('.slider__image');
 
-window.addEventListener('keydown', event => {
-    if (event.code === 'ArrowRight') {
-        gallery.scrollBy({ left: scrollStep, behavior: 'smooth' });
-    } else if (event.code === 'ArrowLeft') {
-        gallery.scrollBy({ left: -scrollStep, behavior: 'smooth' });
-    }
-});
-
-const inputRef = document.querySelector('#controls input');
-const renderBtn = document.querySelector('[data-action="render"]');
-const destroyBtn = document.querySelector('[data-action="destroy"]');
-const boxesContainer = document.querySelector('#boxes');
+const handleResizeImage = (event) => {
+    const value = event.target.value;
+    sliderImage.style.width = `${value}px`;
+    console.log(`Розмір зображення змінено на: ${value}px`);
+};
 
  
-renderBtn.addEventListener('click', () => {
-    const amount = Number(inputRef.value);
-    if (amount > 0) {
-        createBoxes(amount);
-    }
-});
+const debouncedResize = _.debounce(handleResizeImage, 50);
 
-destroyBtn.addEventListener('click', destroyBoxes);
+sliderInput.addEventListener('input', debouncedResize);
+
 
  
-function getRandomColor() {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    return `rgb(${r}, ${g}, ${b})`;
-}
+const box = document.getElementById('box');
+
+const moveBox = (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
+
+    box.style.left = `${x}px`;
+    box.style.top = `${y}px`;
+};
 
  
-function createBoxes(amount) {
-   
-    destroyBoxes();
-
-    const elements = [];
-    let size = 30;  
-
-    for (let i = 0; i < amount; i++) {
-        const div = document.createElement('div');
-        div.style.width = `${size}px`;
-        div.style.height = `${size}px`;
-        div.style.backgroundColor = getRandomColor();
-
-        elements.push(div);
-        size += 10; 
-    }
-
-   
-    boxesContainer.append(...elements);
-}
-
- 
-function destroyBoxes() {
-    boxesContainer.innerHTML = '';
-    inputRef.value = '';  
-}
-
-
-
+window.addEventListener('mousemove', moveBox);
